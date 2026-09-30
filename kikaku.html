@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>事業企画書：AIインフルエンサー活用 SME向けSNS運用自動化SaaS</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm 12mm;
+            background-color: #f8fafc;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Noto Sans JP", sans-serif;
+            color: #1e293b;
+            background-color: #f8fafc;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+
+        /* Full-bleed Header Banner */
+        .header-banner {
+            margin: -15mm -12mm 15px -12mm;
+            padding: 20px 15mm 18px 15mm;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1e3a8a 100%);
+            color: #ffffff;
+            border-bottom: 4px solid #2563eb;
+        }
+
+        .header-top {
+            width: 100%;
+            display: table;
+            margin-bottom: 8px;
+        }
+
+        .header-title-cell {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .header-meta-cell {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+            width: 200px;
+        }
+
+        .doc-badge {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 8pt;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        h1.doc-title {
+            margin: 0;
+            font-size: 18pt;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .doc-subtitle {
+            margin-top: 4px;
+            font-size: 10pt;
+            color: #93c5fd;
+            font-weight: normal;
+        }
+
+        .meta-table {
+            width: 100%;
+            font-size: 8.5pt;
+            color: #cbd5e1;
+            border-collapse: collapse;
+        }
+
+        .meta-table td {
+            padding: 2px 0;
+        }
+
+        .meta-label {
+            color: #94a3b8;
+            font-weight: bold;
+            width: 60px;
+        }
+
+        /* Section Styling */
+        h2.section-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #0f172a;
+            border-left: 5px solid #2563eb;
+            padding-left: 10px;
+            margin: 18px 0 10px 0;
+            page-break-after: avoid;
+        }
+
+        h3.subsection-title {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin: 12px 0 6px 0;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+            text-align: justify;
+        }
+
+        /* Callout Box */
+        .summary-box {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .summary-title {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 6px;
+        }
+
+        /* 3-Column Table Layout for Cards */
+        .card-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px 0;
+            margin: 10px -8px 15px -8px;
+        }
+
+        .card-cell {
+            display: table-cell;
+            width: 33.33%;
+            vertical-align: top;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .card-header {
+            font-weight: bold;
+            font-size: 9.5pt;
+            color: #1e293b;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+        }
+
+        .card-icon {
+            color: #2563eb;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+
+        /* KPI Stat Cards */
+        .kpi-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px 0;
+            margin: 10px -8px 15px -8px;
+        }
+
+        .kpi-cell {
+            display: table-cell;
+            width: 25%;
+            vertical-align: top;
+            background-color: #ffffff;
+            border: 1px solid #dbeafe;
+            border-top: 3px solid #2563eb;
+            border-radius: 4px;
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+        .kpi-num {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin: 2px 0;
+        }
+
+        .kpi-label {
+            font-size: 8pt;
+            color: #64748b;
+        }
+
+        /* Feature & Pricing Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 15px 0;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 9pt;
+        }
+
+        .data-table th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: left;
+            padding: 7px 10px;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .data-table td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Diagram Box */
+        .diagram-container {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            margin: 10px 0 15px 0;
+        }
+
+        .workflow-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .wf-step {
+            display: table-cell;
+            width: 22%;
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            padding: 8px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .wf-arrow {
+            display: table-cell;
+            width: 4%;
+            vertical-align: middle;
+            text-align: center;
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+
+        .wf-title {
+            font-weight: bold;
+            color: #0f172a;
+            font-size: 8.5pt;
+            margin-bottom: 3px;
+        }
+
+        .wf-desc {
+            font-size: 7.5pt;
+            color: #475569;
+        }
+
+        /* Footer */
+        .footer-text {
+            margin-top: 20px;
+            padding-top: 8px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 8pt;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        .tag-vn {
+            display: inline-block;
+            background-color: #fef3c7;
+            color: #92400e;
+            font-size: 7.5pt;
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <div class="header-top">
+            <div class="header-title-cell">
+                <span class="doc-badge">NEW BUSINESS PROPOSAL</span>
+                <h1 class="doc-title">AIインフルエンサー活用 SME向けSNS運用自動化SaaS</h1>
+                <div class="doc-subtitle">AI Influencer × B2B SaaS for Japanese SMEs (AI-Operator for Business)</div>
+            </div>
+            <div class="header-meta-cell">
+                <table class="meta-table">
+                    <tr>
+                        <td class="meta-label">提出日:</td>
+                        <td>2026年10月01日</td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">発案者:</td>
+                        <td>Phan Thanh Xuan Uyen</td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">区分:</td>
+                        <td>新規事業企画書 (B2B)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Executive Summary -->
+    <h2 class="section-title">1. エグゼクティブ・サマリー (Executive Summary)</h2>
+    <div class="summary-box">
+        <div class="summary-title">【事業コンセプト】日本のSME（中小企業・店舗）向け AIブランドアンバサダー自動運用プラットフォーム</div>
+        <p>
+            本事業は、日本の飲食店・美容サロン・D2Cブランドなどの中小企業（SME）を対象に、<b>一貫性のあるAIインフルエンサー（顔出しNG対応）の生成から、日本語敬語キャプション作成、SNS（Instagram, TikTok, X, LINE）への自動投稿までをワンストップで提供するB2B SaaS</b>です。
+            従来、月額30万円以上かかっていたSNS運用外注費を<b>月額2.98万円〜</b>に削減し、深刻な人手不足と「顔出し」に関する課題を解決します。
+        </p>
+    </div>
+
+    <!-- KPI Targets -->
+    <div class="kpi-table">
+        <div class="kpi-cell">
+            <div class="kpi-label">想定ターゲット市場</div>
+            <div class="kpi-num">350万社+</div>
+            <div class="kpi-label">日本国内SME・店舗数</div>
+        </div>
+        <div class="kpi-cell">
+            <div class="kpi-label">目標ARR (3年目)</div>
+            <div class="kpi-num">3.5億円</div>
+            <div class="kpi-label">契約店舗数 500社</div>
+        </div>
+        <div class="kpi-cell">
+            <div class="kpi-label">顧客コスト削減率</div>
+            <div class="kpi-num">80%〜90%</div>
+            <div class="kpi-label">外注費 vs 本SaaS</div>
+        </div>
+        <div class="kpi-cell">
+            <div class="kpi-label">コンテンツ生成速度</div>
+            <div class="kpi-num">3分/投稿</div>
+            <div class="kpi-label">AIフル自動パイプライン</div>
+        </div>
+    </div>
+
+    <!-- Section 2: Market Pain Points -->
+    <h2 class="section-title">2. 市場背景とSMEの3大課題 (Market Background & Pain Points)</h2>
+    <div class="card-table">
+        <div class="card-cell">
+            <div class="card-header"><span class="card-icon">❶</span>人手不足と運用負荷</div>
+            <p style="font-size: 8.5pt; color: #334155;">
+                店舗オーナーやスタッフが本業に追われ、SNS運用の継続が困難。コンテンツ企画や毎日更新にかかるリソースが極めて不足している。
+            </p>
+        </div>
+        <div class="card-cell">
+            <div class="card-header"><span class="card-icon">❷</span>「顔出しNG」の文化障壁</div>
+            <p style="font-size: 8.5pt; color: #334155;">
+                プライバシー意識が高い日本では、スタッフが個人の顔をSNSに出すことへの抵抗感が強い。結果として人間味のあるコンテンツが作れない。
+            </p>
+        </div>
+        <div class="card-cell">
+            <div class="card-header"><span class="card-icon">❸</span>運用代行の高額なコスト</div>
+            <p style="font-size: 8.5pt; color: #334155;">
+                外部のSNSマーケティング代理店に頼むと月額30万〜50万円の費用が発生し、小規模店舗やSMEの予算感と大きく乖離している。
+            </p>
+        </div>
+    </div>
+
+    <!-- Section 3: Product Solution & Workflow -->
+    <h2 class="section-title">3. 製品概要とシステムフロー (Product Overview & Architecture)</h2>
+    <p>
+        ユーザー（店舗オーナー）は簡単なWebダッシュボードから商品写真やキャンペーン概要を入力するだけで、AIが専属のインフルエンサーとして投稿を作成・自動配信します。
+    </p>
+
+    <div class="diagram-container">
+        <div class="summary-title" style="margin-bottom: 10px; font-size: 9pt;">【AI Content Generation Pipeline Architectural Workflow】</div>
+        <div class="workflow-table">
+            <div class="wf-step">
+                <div class="wf-title">① 入力 & 設定</div>
+                <div class="wf-desc">商品写真・プロモーション内容の登録 & AIペルソナ選択</div>
+            </div>
+            <div class="wf-arrow">➔</div>
+            <div class="wf-step">
+                <div class="wf-title">② AI Engine処理</div>
+                <div class="wf-desc">LoRA/ControlNet（画像生成）+ RAG LLM（敬語・ハッシュタグ）</div>
+            </div>
+            <div class="wf-arrow">➔</div>
+            <div class="wf-step">
+                <div class="wf-title">③ 法令＆プレビュー</div>
+                <div class="wf-desc">薬機法・景表法自動チェック + 1-Click 承認</div>
+            </div>
+            <div class="wf-arrow">➔</div>
+            <div class="wf-step">
+                <div class="wf-title">④ 自動配信</div>
+                <div class="wf-desc">Instagram / TikTok / X / LINEへ指定日時に一括投稿</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: Key Differentiators -->
+    <h2 class="section-title">4. 競合優位性と技術的コア (Key Differentiators & Tech Core)</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">機能・技術モジュール</th>
+                <th style="width: 45%;">技術仕様 & 特徴</th>
+                <th style="width: 30%;">SME顧客への提供価値</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Face Consistency Pipeline</b></td>
+                <td>Flux / SDXL + LoRA 専属学習により、人物の顔・体型・雰囲気の統一感を100%保持。</td>
+                <td>ブランドの「顔」となる専属AIモデルを低価格で所有可能。</td>
+            </tr>
+            <tr>
+                <td><b>Japanese Localized LLM Agent</b></td>
+                <td>日本のビジネス文脈（敬語、絵文字、顔文字 (^^)、SEOハッシュタグ）に特化したプロンプトエンジニアリング。</td>
+                <td>自然で親しみやすい日本語文章の自動作成（修正不要レベル）。</td>
+            </tr>
+            <tr>
+                <td><b>Compliance Guardrails</b></td>
+                <td>薬機法・景表法（ステルスマーケティング規制）の自動リスク検知フィルターを統合。</td>
+                <td>炎上リスクや法令違反を未然に防止し、安心して運用可能。</td>
+            </tr>
+            <tr>
+                <td><b>Multi-Channel Orchestrator</b></td>
+                <td>Meta Graph API, TikTok API, X API v2を統合したAPI投稿エンジン。</td>
+                <td>1回の作成で複数SNSへ最適化フォーマットで一括投稿。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 5: Pricing Model -->
+    <h2 class="section-title">5. 料金プランとマネタイズ (Pricing & Monetization Model)</h2>
+    <div class="card-table">
+        <div class="card-cell">
+            <div class="card-header">ライトプラン (Starter)</div>
+            <div style="margin: 6px 0;"><span class="price-badge">月額 29,800 円</span></div>
+            <ul style="padding-left: 15px; margin: 0; font-size: 8pt; color: #475569;">
+                <li>AIペルソナ：1体</li>
+                <li>月間静止画投稿：30本</li>
+                <li>対応SNS：Instagram + X</li>
+                <li>投稿自動スケジュール配信</li>
+                <li><b>ターゲット：</b>個人飲食店・カフェ</li>
+            </ul>
+        </div>
+        <div class="card-cell" style="border: 2px solid #2563eb; background-color: #f0f9ff;">
+            <div class="card-header" style="color: #1d4ed8; border-bottom-color: #2563eb;">プロプラン (Pro) ★人気No.1</div>
+            <div style="margin: 6px 0;"><span class="price-badge" style="background-color: #2563eb; color: #fff;">月額 59,800 円</span></div>
+            <ul style="padding-left: 15px; margin: 0; font-size: 8pt; color: #334155;">
+                <li>AIペルソナ：2体</li>
+                <li>月間静止画30本 + <b>動画Shorts 15本</b></li>
+                <li>対応SNS：Instagram, TikTok, X, LINE</li>
+                <li>RAG商品ナレッジベース連携</li>
+                <li><b>ターゲット：</b>美容サロン・D2Cブランド</li>
+            </ul>
+        </div>
+        <div class="card-cell">
+            <div class="card-header">エンタープライズ (Enterprise)</div>
+            <div style="margin: 6px 0;"><span class="price-badge">月額 149,800 円〜</span></div>
+            <ul style="padding-left: 15px; margin: 0; font-size: 8pt; color: #475569;">
+                <li>複数店舗 / Agency管理機能</li>
+                <li>完全オリジナルAI LoRAモデル開発</li>
+                <li>API連携 & 優先レンダリング</li>
+                <li>専任カスタマーサクセスサポート</li>
+                <li><b>ターゲット：</b>複数店舗チェーン・代理店</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 6: Go-To-Market & Roadmap -->
+    <h2 class="section-title">6. GTM戦略と開発ロードマップ (Go-To-Market & Roadmap)</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">フェーズ</th>
+                <th style="width: 30%;">主要取り組み (Milestones)</th>
+                <th style="width: 25%;">獲得目標 (KPI)</th>
+                <th style="width: 25%;">販売チャネル</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Phase 1 (Month 1-3)</b><br><span class="tag-vn">MVP開発・検証</span></td>
+                <td>コアエンジンの構築（ComfyUI Pipeline + LLM Agent）、クローズドベータテスト（飲食店・美容室10社）。</td>
+                <td>10社ベータ利用<br>NPS 80%以上</td>
+                <td>直販・縁故マーケティング・Web直販</td>
+            </tr>
+            <tr>
+                <td><b>Phase 2 (Month 4-6)</b><br><span class="tag-vn">正式リリース</span></td>
+                <td>SaaS正式提供開始。薬機法チェックエンジン統合、Video生成機能（Wan 2.1 APIなど）の強化。</td>
+                <td>有料契約 50社<br>MRR 250万円</td>
+                <td>Meta広告・Note/SEO記事・Webinar開催</td>
+            </tr>
+            <tr>
+                <td><b>Phase 3 (Month 7-12)</b><br><span class="tag-vn">代理店展開</span></td>
+                <td>地方DX推進企業・Web制作会社とのパートナーシップ（代理店制度 15~20% レベニューシェア）。</td>
+                <td>有料契約 150社<br>MRR 800万円</td>
+                <td>DX代理店網・J-Startupコミュニティ</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Section 7: 担当者 -->
+    <h2 class="section-title">7. 担当者</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">名前</th>
+                <th style="width: 30%;">役割</th>
+                <th style="width: 25%;">説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>PHAN THANH XUAN UYEN</b></td>
+                <td>システム開発</td>
+                <td>• AIエンジンの設計・最適化（ComfyUIワークフロー、LoRA、LLMプロンプトエンジニアリング）<br>• フルスタック・システムアーキテクチャの開発およびAPI連携（Meta、TikTok、X、LINE）<br>• コンテンツパイプラインの自動化と品質管理<br></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>拓弥</b></td>
+                <td>集客</td>
+                <td>・日本市場におけるマーケティングおよび顧客獲得<br>・B2B営業、ならびに代理店（エージェンシー）や企業・SME（中小企業）パートナーの開拓・拡大<br>・ユーザーフィードバックの収集および日本市場に適した機能の策定</td>
+                <td></td>
+            </tr>
+           
+        </tbody>
+    </table>
+    <!-- Section ８: その他 -->
+    <h2 class="section-title">8. メモ</h2>
+    <p>
+        ・日本で成功すれば、ベトナムにも進出します。
+        <br>
+        ・技術に関して場合によって変更します。
+    </p>
+    <div class="footer-text">
+       
+    </div>
+
+</body>
+</html>
