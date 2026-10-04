@@ -2,575 +2,362 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>事業企画書：AIインフルエンサー活用 SME向けSNS運用自動化SaaS</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 15mm 12mm;
-            background-color: #f8fafc;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Noto Sans JP", sans-serif;
-            color: #1e293b;
-            background-color: #f8fafc;
-            font-size: 9.5pt;
-            line-height: 1.5;
-        }
-
-        /* Full-bleed Header Banner */
-        .header-banner {
-            margin: -15mm -12mm 15px -12mm;
-            padding: 20px 15mm 18px 15mm;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1e3a8a 100%);
-            color: #ffffff;
-            border-bottom: 4px solid #2563eb;
-        }
-
-        .header-top {
-            width: 100%;
-            display: table;
-            margin-bottom: 8px;
-        }
-
-        .header-title-cell {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .header-meta-cell {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: right;
-            width: 200px;
-        }
-
-        .doc-badge {
-            display: inline-block;
-            background-color: #2563eb;
-            color: #ffffff;
-            font-size: 8pt;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        h1.doc-title {
-            margin: 0;
-            font-size: 18pt;
-            font-weight: bold;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-
-        .doc-subtitle {
-            margin-top: 4px;
-            font-size: 10pt;
-            color: #93c5fd;
-            font-weight: normal;
-        }
-
-        .meta-table {
-            width: 100%;
-            font-size: 8.5pt;
-            color: #cbd5e1;
-            border-collapse: collapse;
-        }
-
-        .meta-table td {
-            padding: 2px 0;
-        }
-
-        .meta-label {
-            color: #94a3b8;
-            font-weight: bold;
-            width: 60px;
-        }
-
-        /* Section Styling */
-        h2.section-title {
-            font-size: 12pt;
-            font-weight: bold;
-            color: #0f172a;
-            border-left: 5px solid #2563eb;
-            padding-left: 10px;
-            margin: 18px 0 10px 0;
-            page-break-after: avoid;
-        }
-
-        h3.subsection-title {
-            font-size: 10pt;
-            font-weight: bold;
-            color: #1e3a8a;
-            margin: 12px 0 6px 0;
-            page-break-after: avoid;
-        }
-
-        p {
-            margin: 0 0 8px 0;
-            text-align: justify;
-        }
-
-        /* Callout Box */
-        .summary-box {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-left: 4px solid #2563eb;
-            border-radius: 4px;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .summary-title {
-            font-size: 10pt;
-            font-weight: bold;
-            color: #1e3a8a;
-            margin-bottom: 6px;
-        }
-
-        /* 3-Column Table Layout for Cards */
-        .card-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 8px 0;
-            margin: 10px -8px 15px -8px;
-        }
-
-        .card-cell {
-            display: table-cell;
-            width: 33.33%;
-            vertical-align: top;
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 10px 12px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-        }
-
-        .card-header {
-            font-weight: bold;
-            font-size: 9.5pt;
-            color: #1e293b;
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 4px;
-            margin-bottom: 6px;
-        }
-
-        .card-icon {
-            color: #2563eb;
-            font-weight: bold;
-            margin-right: 4px;
-        }
-
-        /* KPI Stat Cards */
-        .kpi-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 8px 0;
-            margin: 10px -8px 15px -8px;
-        }
-
-        .kpi-cell {
-            display: table-cell;
-            width: 25%;
-            vertical-align: top;
-            background-color: #ffffff;
-            border: 1px solid #dbeafe;
-            border-top: 3px solid #2563eb;
-            border-radius: 4px;
-            padding: 8px 10px;
-            text-align: center;
-        }
-
-        .kpi-num {
-            font-size: 14pt;
-            font-weight: bold;
-            color: #1e3a8a;
-            margin: 2px 0;
-        }
-
-        .kpi-label {
-            font-size: 8pt;
-            color: #64748b;
-        }
-
-        /* Feature & Pricing Tables */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0 15px 0;
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            overflow: hidden;
-            font-size: 9pt;
-        }
-
-        .data-table th {
-            background-color: #0f172a;
-            color: #ffffff;
-            font-weight: bold;
-            text-align: left;
-            padding: 7px 10px;
-            border-bottom: 1px solid #cbd5e1;
-        }
-
-        .data-table td {
-            padding: 7px 10px;
-            border-bottom: 1px solid #e2e8f0;
-            vertical-align: top;
-        }
-
-        .data-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        .price-badge {
-            display: inline-block;
-            background-color: #eff6ff;
-            color: #1d4ed8;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 3px;
-            border: 1px solid #bfdbfe;
-        }
-
-        /* Diagram Box */
-        .diagram-container {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 12px;
-            text-align: center;
-            margin: 10px 0 15px 0;
-        }
-
-        .workflow-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .wf-step {
-            display: table-cell;
-            width: 22%;
-            background-color: #f1f5f9;
-            border: 1px solid #cbd5e1;
-            border-radius: 5px;
-            padding: 8px;
-            vertical-align: middle;
-            text-align: center;
-        }
-
-        .wf-arrow {
-            display: table-cell;
-            width: 4%;
-            vertical-align: middle;
-            text-align: center;
-            color: #2563eb;
-            font-weight: bold;
-            font-size: 12pt;
-        }
-
-        .wf-title {
-            font-weight: bold;
-            color: #0f172a;
-            font-size: 8.5pt;
-            margin-bottom: 3px;
-        }
-
-        .wf-desc {
-            font-size: 7.5pt;
-            color: #475569;
-        }
-
-        /* Footer */
-        .footer-text {
-            margin-top: 20px;
-            padding-top: 8px;
-            border-top: 1px solid #e2e8f0;
-            font-size: 8pt;
-            color: #94a3b8;
-            text-align: center;
-        }
-
-        .tag-vn {
-            display: inline-block;
-            background-color: #fef3c7;
-            color: #92400e;
-            font-size: 7.5pt;
-            padding: 1px 5px;
-            border-radius: 3px;
-            margin-left: 4px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Ambassador Platform - Workflow with Review System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-
-    <!-- Header Banner -->
-    <div class="header-banner">
-        <div class="header-top">
-            <div class="header-title-cell">
-                <span class="doc-badge">NEW BUSINESS PROPOSAL</span>
-                <h1 class="doc-title">AIインフルエンサー活用 SME向けSNS運用自動化SaaS</h1>
-                <div class="doc-subtitle">AI Influencer × B2B SaaS for Japanese SMEs (AI-Operator for Business)</div>
+<body class="bg-slate-950 text-slate-100 font-sans p-4 md:p-8 min-h-screen flex items-center justify-center">
+    <div class="max-w-5xl w-full mx-auto space-y-6">
+        <!-- Header -->
+        <header class="border-b border-slate-800 pb-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-blue-400 flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AIインフルエンサー 統合管理システム
+                </h1>
+                <p class="text-xs text-slate-400 mt-1">アバターリアルタイムレビュー & SNS自動配信ワークフロー</p>
             </div>
-            <div class="header-meta-cell">
-                <table class="meta-table">
-                    <tr>
-                        <td class="meta-label">提出日:</td>
-                        <td>2026年10月01日</td>
-                    </tr>
-                    <tr>
-                        <td class="meta-label">発案者:</td>
-                        <td>Phan Thanh Xuan Uyen</td>
-                    </tr>
-                    <tr>
-                        <td class="meta-label">区分:</td>
-                        <td>新規事業企画書 (B2B)</td>
-                    </tr>
-                </table>
+            <span class="text-xs bg-blue-950 text-blue-400 border border-blue-800 px-3 py-1 rounded-full font-mono">v2.4 Ready</span>
+        </header>
+
+        <!-- Step Navigation Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 bg-slate-900 p-2 rounded-xl border border-slate-800 text-xs text-center font-medium">
+            <div id="step-btn-1" class="py-2.5 rounded-lg bg-blue-600 text-white font-bold cursor-pointer transition" onclick="goToStep(1)">1. 基本設定</div>
+            <div id="step-btn-2" class="py-2.5 rounded-lg text-slate-400 cursor-pointer transition" onclick="goToStep(2)">2. APIキー設定</div>
+            <div id="step-btn-3" class="py-2.5 rounded-lg text-slate-400 cursor-pointer transition" onclick="goToStep(3)">3. アバター選択</div>
+            <div id="step-btn-4" class="py-2.5 rounded-lg text-slate-400 cursor-pointer transition flex items-center justify-center gap-1" onclick="goToStep(4)">
+                <span>4. レビュー</span>
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
             </div>
+            <div id="step-btn-5" class="py-2.5 rounded-lg text-slate-400 cursor-pointer transition" onclick="goToStep(5)">5. 動画生成/検閲</div>
+            <div id="step-btn-6" class="py-2.5 rounded-lg text-slate-400 cursor-pointer transition" onclick="goToStep(6)">6. SNS自動投稿</div>
         </div>
-    </div>
 
-    <!-- Section 1: Executive Summary -->
-    <h2 class="section-title">1. エグゼクティブ・サマリー (Executive Summary)</h2>
-    <div class="summary-box">
-        <div class="summary-title">【事業コンセプト】日本のSME（中小企業・店舗）向け AIブランドアンバサダー自動運用プラットフォーム</div>
-        <p>
-            本事業は、日本の飲食店・美容サロン・D2Cブランドなどの中小企業（SME）を対象に、<b>一貫性のあるAIインフルエンサー（顔出しNG対応）の生成から、日本語敬語キャプション作成、SNS（Instagram, TikTok, X, LINE）への自動投稿までをワンストップで提供するB2B SaaS</b>です。
-            従来、月額30万円以上かかっていたSNS運用外注費を<b>月額2.98万円〜</b>に削減し、深刻な人手不足と「顔出し」に関する課題を解決します。
-        </p>
-    </div>
-
-    <!-- KPI Targets -->
-    <div class="kpi-table">
-        <div class="kpi-cell">
-            <div class="kpi-label">想定ターゲット市場</div>
-            <div class="kpi-num">350万社+</div>
-            <div class="kpi-label">日本国内SME・店舗数</div>
-        </div>
-        <div class="kpi-cell">
-            <div class="kpi-label">目標ARR (3年目)</div>
-            <div class="kpi-num">3.5億円</div>
-            <div class="kpi-label">契約店舗数 500社</div>
-        </div>
-        <div class="kpi-cell">
-            <div class="kpi-label">顧客コスト削減率</div>
-            <div class="kpi-num">80%〜90%</div>
-            <div class="kpi-label">外注費 vs 本SaaS</div>
-        </div>
-        <div class="kpi-cell">
-            <div class="kpi-label">コンテンツ生成速度</div>
-            <div class="kpi-num">3分/投稿</div>
-            <div class="kpi-label">AIフル自動パイプライン</div>
-        </div>
-    </div>
-
-    <!-- Section 2: Market Pain Points -->
-    <h2 class="section-title">2. 市場背景とSMEの3大課題 (Market Background & Pain Points)</h2>
-    <div class="card-table">
-        <div class="card-cell">
-            <div class="card-header"><span class="card-icon">❶</span>人手不足と運用負荷</div>
-            <p style="font-size: 8.5pt; color: #334155;">
-                店舗オーナーやスタッフが本業に追われ、SNS運用の継続が困難。コンテンツ企画や毎日更新にかかるリソースが極めて不足している。
-            </p>
-        </div>
-        <div class="card-cell">
-            <div class="card-header"><span class="card-icon">❷</span>「顔出しNG」の文化障壁</div>
-            <p style="font-size: 8.5pt; color: #334155;">
-                プライバシー意識が高い日本では、スタッフが個人の顔をSNSに出すことへの抵抗感が強い。結果として人間味のあるコンテンツが作れない。
-            </p>
-        </div>
-        <div class="card-cell">
-            <div class="card-header"><span class="card-icon">❸</span>運用代行の高額なコスト</div>
-            <p style="font-size: 8.5pt; color: #334155;">
-                外部のSNSマーケティング代理店に頼むと月額30万〜50万円の費用が発生し、小規模店舗やSMEの予算感と大きく乖離している。
-            </p>
-        </div>
-    </div>
-
-    <!-- Section 3: Product Solution & Workflow -->
-    <h2 class="section-title">3. 製品概要とシステムフロー (Product Overview & Architecture)</h2>
-    <p>
-        ユーザー（店舗オーナー）は簡単なWebダッシュボードから商品写真やキャンペーン概要を入力するだけで、AIが専属のインフルエンサーとして投稿を作成・自動配信します。
-    </p>
-
-    <div class="diagram-container">
-        <div class="summary-title" style="margin-bottom: 10px; font-size: 9pt;">【AI Content Generation Pipeline Architectural Workflow】</div>
-        <div class="workflow-table">
-            <div class="wf-step">
-                <div class="wf-title">① 入力 & 設定</div>
-                <div class="wf-desc">商品写真・プロモーション内容の登録 & AIペルソナ選択</div>
+        <!-- Simulation Container -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 min-h-[480px] flex flex-col justify-between shadow-2xl relative">
+            <div id="step-content">
+                <!-- Content is injected dynamically by JavaScript -->
             </div>
-            <div class="wf-arrow">➔</div>
-            <div class="wf-step">
-                <div class="wf-title">② AI Engine処理</div>
-                <div class="wf-desc">LoRA/ControlNet（画像生成）+ RAG LLM（敬語・ハッシュタグ）</div>
-            </div>
-            <div class="wf-arrow">➔</div>
-            <div class="wf-step">
-                <div class="wf-title">③ 法令＆プレビュー</div>
-                <div class="wf-desc">薬機法・景表法自動チェック + 1-Click 承認</div>
-            </div>
-            <div class="wf-arrow">➔</div>
-            <div class="wf-step">
-                <div class="wf-title">④ 自動配信</div>
-                <div class="wf-desc">Instagram / TikTok / X / LINEへ指定日時に一括投稿</div>
+
+            <!-- Navigation Controls -->
+            <div class="flex justify-between items-center border-t border-slate-800 pt-4 mt-6">
+                <button id="prev-btn" onclick="prevStep()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-semibold text-slate-300 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                    <i class="fa-solid fa-arrow-left mr-1.5"></i> 前のステップ
+                </button>
+                <div class="text-xs font-mono text-slate-500" id="step-indicator">Step 1 / 6</div>
+                <button id="next-btn" onclick="nextStep()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-lg text-xs font-semibold text-white transition shadow-lg shadow-blue-900/30">
+                    次のステップ <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Section 4: Key Differentiators -->
-    <h2 class="section-title">4. 競合優位性と技術的コア (Key Differentiators & Tech Core)</h2>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 25%;">機能・技術モジュール</th>
-                <th style="width: 45%;">技術仕様 & 特徴</th>
-                <th style="width: 30%;">SME顧客への提供価値</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Face Consistency Pipeline</b></td>
-                <td>Flux / SDXL + LoRA 専属学習により、人物の顔・体型・雰囲気の統一感を100%保持。</td>
-                <td>ブランドの「顔」となる専属AIモデルを低価格で所有可能。</td>
-            </tr>
-            <tr>
-                <td><b>Japanese Localized LLM Agent</b></td>
-                <td>日本のビジネス文脈（敬語、絵文字、顔文字 (^^)、SEOハッシュタグ）に特化したプロンプトエンジニアリング。</td>
-                <td>自然で親しみやすい日本語文章の自動作成（修正不要レベル）。</td>
-            </tr>
-            <tr>
-                <td><b>Compliance Guardrails</b></td>
-                <td>薬機法・景表法（ステルスマーケティング規制）の自動リスク検知フィルターを統合。</td>
-                <td>炎上リスクや法令違反を未然に防止し、安心して運用可能。</td>
-            </tr>
-            <tr>
-                <td><b>Multi-Channel Orchestrator</b></td>
-                <td>Meta Graph API, TikTok API, X API v2を統合したAPI投稿エンジン。</td>
-                <td>1回の作成で複数SNSへ最適化フォーマットで一括投稿。</td>
-            </tr>
-        </tbody>
-    </table>
+    <script>
+        let currentStep = 1;
+        let previewState = {
+            expression: 'smile',
+            bg: 'office',
+            isPlaying: false,
+            isApproved: false,
+            testText: '皆様こんにちは。我が社の最新AIソリューションをご案内いたします。'
+        };
 
-    <!-- Section 5: Pricing Model -->
-    <h2 class="section-title">5. 料金プランとマネタイズ (Pricing & Monetization Model)</h2>
-    <div class="card-table">
-        <div class="card-cell">
-            <div class="card-header">ライトプラン (Starter)</div>
-            <div style="margin: 6px 0;"><span class="price-badge">月額 29,800 円</span></div>
-            <ul style="padding-left: 15px; margin: 0; font-size: 8pt; color: #475569;">
-                <li>AIペルソナ：1体</li>
-                <li>月間静止画投稿：30本</li>
-                <li>対応SNS：Instagram + X</li>
-                <li>投稿自動スケジュール配信</li>
-                <li><b>ターゲット：</b>個人飲食店・カフェ</li>
-            </ul>
-        </div>
-        <div class="card-cell" style="border: 2px solid #2563eb; background-color: #f0f9ff;">
-            <div class="card-header" style="color: #1d4ed8; border-bottom-color: #2563eb;">プロプラン (Pro) ★人気No.1</div>
-            <div style="margin: 6px 0;"><span class="price-badge" style="background-color: #2563eb; color: #fff;">月額 59,800 円</span></div>
-            <ul style="padding-left: 15px; margin: 0; font-size: 8pt; color: #334155;">
-                <li>AIペルソナ：2体</li>
-                <li>月間静止画30本 + <b>動画Shorts 15本</b></li>
-                <li>対応SNS：Instagram, TikTok, X, LINE</li>
-                <li>RAG商品ナレッジベース連携</li>
-                <li><b>ターゲット：</b>美容サロン・D2Cブランド</li>
-            </ul>
-        </div>
-        <div class="card-cell">
-            <div class="card-header">エンタープライズ (Enterprise)</div>
-            <div style="margin: 6px 0;"><span class="price-badge">月額 149,800 円〜</span></div>
-            <ul style="padding-left: 15px; margin: 0; font-size: 8pt; color: #475569;">
-                <li>複数店舗 / Agency管理機能</li>
-                <li>完全オリジナルAI LoRAモデル開発</li>
-                <li>API連携 & 優先レンダリング</li>
-                <li>専任カスタマーサクセスサポート</li>
-                <li><b>ターゲット：</b>複数店舗チェーン・代理店</li>
-            </ul>
-        </div>
-    </div>
+        function renderStep() {
+            const container = document.getElementById('step-content');
+            
+            if (currentStep === 1) {
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-building"></i></div>
+                            <div>
+                                <h2 class="text-base font-bold text-white">1. アカウント登録 & ブランド基本設定</h2>
+                                <p class="text-xs text-slate-400">企業プロファイルおよびコンテンツ運用ポリシーを定義します。</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800/80">
+                                <label class="text-xs text-slate-400 mb-1 block">組織名 / 企業名</label>
+                                <input type="text" value="株式会社AIソリューションズ" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800/80">
+                                <label class="text-xs text-slate-400 mb-1 block">運用担当部門</label>
+                                <input type="text" value="広報・デジタルマーケティング部" class="w-full bg-slate-900 border border-slate-700 rounded p-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentStep === 2) {
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-purple-600/20 text-purple-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-key"></i></div>
+                            <div>
+                                <h2 class="text-base font-bold text-white">2. SNS API認証キー設定</h2>
+                                <p class="text-xs text-slate-400">自動投稿を実行する各種SNSプラットフォームのAPIキーを連携します。</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-xs text-slate-200 flex items-center gap-2"><i class="fa-brands fa-tiktok text-pink-500"></i> TikTok API</span>
+                                    <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded">接続済み</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500">Token: ********************</p>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-xs text-slate-200 flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> YouTube API</span>
+                                    <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded">接続済み</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500">OAuth 2.0 Authenticated</p>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-xs text-slate-200 flex items-center gap-2"><i class="fa-brands fa-instagram text-purple-500"></i> Instagram API</span>
+                                    <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded">接続済み</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500">Graph API Connected</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentStep === 3) {
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-robot"></i></div>
+                            <div>
+                                <h2 class="text-base font-bold text-white">3. AIアバター & ボイスモデル選択</h2>
+                                <p class="text-xs text-slate-400">配信コンテンツで使用するAIアバターと音声合成エンジンを選択します。</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                            <div class="bg-slate-950 border-2 border-blue-500 p-4 rounded-xl text-center space-y-2 relative">
+                                <div class="w-16 h-16 bg-blue-900/50 rounded-full mx-auto flex items-center justify-center text-blue-400">
+                                    <i class="fa-solid fa-user-tie text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">広報担当 A (Official)</p>
+                                    <p class="text-[10px] text-slate-400">日本語 / 女性アナウンサー風</p>
+                                </div>
+                                <span class="inline-block text-[10px] bg-blue-900 text-blue-300 px-2 py-0.5 rounded font-semibold">選択中</span>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-2 opacity-50 cursor-not-allowed">
+                                <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center text-slate-400">
+                                    <i class="fa-solid fa-user text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">クリエイター B</p>
+                                    <p class="text-[10px] text-slate-400">カジュアル / 男性ボイス</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-2 opacity-50 cursor-not-allowed">
+                                <div class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center text-slate-400">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">カスタム3Dモデル</p>
+                                    <p class="text-[10px] text-slate-400">VRMファイルインポート</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentStep === 4) {
+                // STEP 4: REVIEW & PREVIEW MODULE
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-sliders"></i></div>
+                                <div>
+                                    <h2 class="text-base font-bold text-white">4. アバター リアルタイム プレビュー & レビュー確認</h2>
+                                    <p class="text-xs text-slate-400">表情、音声シンクロ、背景設定の動作を確認し、レビュー承認を行います。</p>
+                                </div>
+                            </div>
+                            <span id="review-approval-status" class="text-xs font-bold px-3 py-1 rounded-full ${previewState.isApproved ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-amber-950 text-amber-400 border border-amber-800'}">
+                                ${previewState.isApproved ? '<i class="fa-solid fa-check"></i> レビュー承認済み' : '<i class="fa-solid fa-clock"></i> 未承認 (レビュー中)'}
+                            </span>
+                        </div>
 
-    <!-- Section 6: Go-To-Market & Roadmap -->
-    <h2 class="section-title">6. GTM戦略と開発ロードマップ (Go-To-Market & Roadmap)</h2>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 20%;">フェーズ</th>
-                <th style="width: 30%;">主要取り組み (Milestones)</th>
-                <th style="width: 25%;">獲得目標 (KPI)</th>
-                <th style="width: 25%;">販売チャネル</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Phase 1 (Month 1-3)</b><br><span class="tag-vn">MVP開発・検証</span></td>
-                <td>コアエンジンの構築（ComfyUI Pipeline + LLM Agent）、クローズドベータテスト（飲食店・美容室10社）。</td>
-                <td>10社ベータ利用<br>NPS 80%以上</td>
-                <td>直販・縁故マーケティング・Web直販</td>
-            </tr>
-            <tr>
-                <td><b>Phase 2 (Month 4-6)</b><br><span class="tag-vn">正式リリース</span></td>
-                <td>SaaS正式提供開始。薬機法チェックエンジン統合、Video生成機能（Wan 2.1 APIなど）の強化。</td>
-                <td>有料契約 50社<br>MRR 250万円</td>
-                <td>Meta広告・Note/SEO記事・Webinar開催</td>
-            </tr>
-            <tr>
-                <td><b>Phase 3 (Month 7-12)</b><br><span class="tag-vn">代理店展開</span></td>
-                <td>地方DX推進企業・Web制作会社とのパートナーシップ（代理店制度 15~20% レベニューシェア）。</td>
-                <td>有料契約 150社<br>MRR 800万円</td>
-                <td>DX代理店網・J-Startupコミュニティ</td>
-            </tr>
-        </tbody>
-    </table>
-    <!-- Section 7: 担当者 -->
-    <h2 class="section-title">7. 担当者</h2>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 20%;">名前</th>
-                <th style="width: 30%;">役割</th>
-                <th style="width: 25%;">説明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>PHAN THANH XUAN UYEN</b></td>
-                <td>システム開発</td>
-                <td>• AIエンジンの設計・最適化（ComfyUIワークフロー、LoRA、LLMプロンプトエンジニアリング）<br>• フルスタック・システムアーキテクチャの開発およびAPI連携（Meta、TikTok、X、LINE）<br>• コンテンツパイプラインの自動化と品質管理<br></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><b>拓弥</b></td>
-                <td>集客</td>
-                <td>・日本市場におけるマーケティングおよび顧客獲得<br>・B2B営業、ならびに代理店（エージェンシー）や企業・SME（中小企業）パートナーの開拓・拡大<br>・ユーザーフィードバックの収集および日本市場に適した機能の策定</td>
-                <td></td>
-            </tr>
-           
-        </tbody>
-    </table>
-    <!-- Section ８: その他 -->
-    <h2 class="section-title">8. メモ</h2>
-    <p>
-        ・日本で成功すれば、ベトナムにも進出します。
-        <br>
-        ・技術に関して場合によって変更します。
-    </p>
-    <div class="footer-text">
-       
-    </div>
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-2">
+                            <!-- Visual Player Frame -->
+                            <div class="md:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col items-center justify-between min-h-[240px] relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-15 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80');"></div>
+                                
+                                <div class="relative z-10 w-full flex justify-between items-center text-[10px] text-slate-400 border-b border-slate-800/80 pb-2">
+                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle text-red-500 text-[8px] animate-pulse"></i> LIVE SIMULATOR</span>
+                                    <span class="font-mono">1080p | 60fps</span>
+                                </div>
 
+                                <!-- Avatar Visual Representation -->
+                                <div class="relative z-10 my-3 text-center">
+                                    <div class="w-20 h-20 rounded-full bg-indigo-900/60 border-2 border-indigo-400 mx-auto flex items-center justify-center text-indigo-300 relative shadow-lg shadow-indigo-950">
+                                        <i class="fa-solid fa-user-tie text-3xl"></i>
+                                        ${previewState.isPlaying ? '<span class="absolute -bottom-1 -right-1 bg-emerald-500 w-4 h-4 rounded-full border-2 border-slate-950 animate-ping"></span>' : ''}
+                                    </div>
+                                    <p class="text-xs font-bold text-white mt-2">広報担当 A (Official)</p>
+                                    <p class="text-[10px] text-indigo-300 font-mono mt-0.5">
+                                        [表情: ${previewState.expression === 'smile' ? '笑顔 (Smile)' : previewState.expression === 'serious' ? '真剣 (Serious)' : '挨拶 (Greeting)'}]
+                                    </p>
+                                </div>
+
+                                <!-- Audio Wave & Playback Simulation -->
+                                <div class="relative z-10 w-full bg-slate-900/90 rounded-lg p-2 border border-slate-800 flex items-center justify-between">
+                                    <button onclick="toggleVoiceTest()" class="text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-3 py-1.5 rounded transition flex items-center gap-1.5">
+                                        <i class="fa-solid ${previewState.isPlaying ? 'fa-square' : 'fa-play'}"></i> ${previewState.isPlaying ? '停止' : '音声テスト再生'}
+                                    </button>
+                                    <div class="flex gap-1 items-end h-4 px-2">
+                                        <div class="w-1 bg-indigo-400 transition-all ${previewState.isPlaying ? 'h-4 animate-bounce' : 'h-1'}"></div>
+                                        <div class="w-1 bg-indigo-400 transition-all ${previewState.isPlaying ? 'h-3 animate-bounce delay-75' : 'h-1'}"></div>
+                                        <div class="w-1 bg-indigo-400 transition-all ${previewState.isPlaying ? 'h-4 animate-bounce delay-150' : 'h-1'}"></div>
+                                        <div class="w-1 bg-indigo-400 transition-all ${previewState.isPlaying ? 'h-2 animate-bounce' : 'h-1'}"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls & Parameter Review -->
+                            <div class="md:col-span-7 space-y-3">
+                                <div>
+                                    <label class="text-xs font-bold text-slate-300 mb-1 block">1. テスト音声スクリプトの入力</label>
+                                    <input type="text" id="test-script-input" value="${previewState.testText}" onchange="updateTestText(this.value)" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500">
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="text-xs font-bold text-slate-300 mb-1 block">2. 表情プリセット</label>
+                                        <select onchange="changeExpression(this.value)" class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500">
+                                            <option value="smile" ${previewState.expression === 'smile' ? 'selected' : ''}>笑顔 (Standard Smile)</option>
+                                            <option value="serious" ${previewState.expression === 'serious' ? 'selected' : ''}>フォーマル・真剣 (Formal)</option>
+                                            <option value="greeting" ${previewState.expression === 'greeting' ? 'selected' : ''}>明るい挨拶 (Energetic)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-bold text-slate-300 mb-1 block">3. 背景環境</label>
+                                        <select class="w-full bg-slate-950 border border-slate-800 rounded p-2 text-xs text-slate-200 focus:outline-none focus:border-indigo-500">
+                                            <option value="office">モダンオフィス (Office)</option>
+                                            <option value="studio">撮影スタジオ (Studio Light)</option>
+                                            <option value="transparent">透過背景 (Green Screen)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2">
+                                    <button onclick="approveReview()" class="w-full py-3 ${previewState.isApproved ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-blue-600 hover:bg-blue-500'} text-white rounded-lg font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-circle-check"></i> ${previewState.isApproved ? 'アバター設定 承認完了 (次のステップへ進めます)' : 'このアバター設定をレビュー承認する'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentStep === 5) {
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div>
+                                <h2 class="text-base font-bold text-white">5. 動画生成 & Brand Safety Guard 検閲</h2>
+                                <p class="text-xs text-slate-400">承認されたアバター設定に基づき、フル動画のレンダリングとガバナンスチェックを実行します。</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl space-y-3">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-slate-400">レビュー済みアバター動画合成:</span>
+                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> 合成完了 (1080p / 60fps)</span>
+                            </div>
+                            <div class="bg-emerald-950/40 border border-emerald-800 p-3 rounded-lg text-xs text-emerald-300 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-check text-xl text-emerald-400"></i>
+                                <div>
+                                    <p class="font-bold">Brand Safety Guard 判定結果: 合格 (Passed)</p>
+                                    <p class="text-[10px] text-emerald-400 mt-0.5">不適切発言、不快表現、および著作権侵害のリスクは検出されませんでした。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentStep === 6) {
+                container.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-pink-600/20 text-pink-400 flex items-center justify-center font-bold text-lg"><i class="fa-solid fa-paper-plane"></i></div>
+                            <div>
+                                <h2 class="text-base font-bold text-white">6. SNSマルチプラットフォーム自動投稿</h2>
+                                <p class="text-xs text-slate-400">認証済みAPIキーを使用して、検閲済み動画を各SNSへ一 me? 配信します。</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-2">
+                                <i class="fa-brands fa-tiktok text-2xl text-pink-500"></i>
+                                <p class="text-xs font-bold text-white">TikTok</p>
+                                <span class="inline-block text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2.5 py-0.5 rounded-full font-bold">API投稿完了</span>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-2">
+                                <i class="fa-brands fa-youtube text-2xl text-red-500"></i>
+                                <p class="text-xs font-bold text-white">YouTube Shorts</p>
+                                <span class="inline-block text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2.5 py-0.5 rounded-full font-bold">API投稿完了</span>
+                            </div>
+                            <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center space-y-2">
+                                <i class="fa-brands fa-instagram text-2xl text-purple-500"></i>
+                                <p class="text-xs font-bold text-white">Instagram Reels</p>
+                                <span class="inline-block text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2.5 py-0.5 rounded-full font-bold">API投稿完了</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            document.getElementById('step-indicator').innerText = `Step ${currentStep} / 6`;
+            document.getElementById('prev-btn').disabled = currentStep === 1;
+            document.getElementById('next-btn').innerHTML = currentStep === 6 ? '最初に戻る <i class="fa-solid fa-rotate-left ml-1"></i>' : '次のステップ <i class="fa-solid fa-arrow-right ml-1"></i>';
+
+            for (let i = 1; i <= 6; i++) {
+                const btn = document.getElementById(`step-btn-${i}`);
+                if (i === currentStep) {
+                    btn.className = "py-2.5 rounded-lg bg-blue-600 text-white font-bold cursor-pointer transition shadow-md shadow-blue-900/40";
+                } else {
+                    btn.className = "py-2.5 rounded-lg text-slate-400 cursor-pointer transition hover:bg-slate-800 hover:text-slate-200";
+                }
+            }
+        }
+
+        function toggleVoiceTest() {
+            previewState.isPlaying = !previewState.isPlaying;
+            renderStep();
+        }
+
+        function changeExpression(val) {
+            previewState.expression = val;
+            renderStep();
+        }
+
+        function updateTestText(val) {
+            previewState.testText = val;
+        }
+
+        function approveReview() {
+            previewState.isApproved = true;
+            renderStep();
+        }
+
+        function nextStep() {
+            if (currentStep < 6) currentStep++;
+            else currentStep = 1;
+            renderStep();
+        }
+
+        function prevStep() {
+            if (currentStep > 1) currentStep--;
+            renderStep();
+        }
+
+        function goToStep(s) {
+            currentStep = s;
+            renderStep();
+        }
+
+        renderStep();
+    </script>
 </body>
 </html>
